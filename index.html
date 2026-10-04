@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>С Днём учителя! — Колледж Хекслет 💜</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Конфетти -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Шапка -->
+<header class="hero">
+  <img class="hero-image" src="photos/main.png" alt="С Днём учителя!">
+
+  <div class="scroll-hint">↓ Наши преподаватели ↓</div>
+</header>
+
+  <!-- Секция с карточками учителей -->
+  <section class="teachers-section">
+    <div class="section-header">
+      <h2>Наши любимые преподаватели</h2>
+      <p class="section-sub">Нажмите на карточку, чтобы открыть поздравление 💌</p>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="🔍 Найти преподавателя..." oninput="filterTeachers()" />
+    </div>
+
+    <div class="teachers-grid" id="teachersGrid">
+      <!-- Карточки генерируются через JS -->
+    </div>
+  </section>
+
+  <!-- Модальное окно поздравления -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal-card" id="modalCard">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <!-- Фото вставляются сюда через JS (#modalPhotos) -->
+      <div class="modal-body">
+        <div class="modal-emoji" id="modalEmoji">🌟</div>
+        <h2 class="modal-name" id="modalName">Имя Преподавателя</h2>
+        <p class="modal-subject" id="modalSubject">Предмет</p>
+        <div class="modal-msg" id="modalMsg"></div>
+        <button class="btn-heart" onclick="sendHeart(this)">❤️ Отправить сердечко</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Подвал -->
+  <footer class="site-footer">
+    <p>💜 Сделано с любовью студентами колледжа <strong>Хекслет</strong> · 2026</p>
+  </footer>
+
+  <script src="teachers.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
